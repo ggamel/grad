@@ -26,7 +26,7 @@ export default class MyApp extends App {
               name: 'viewport',
               content: 'width=device-width, initial-scale=1',
             },
-            { property: 'og:title', content: 'Hello next.js!' },
+            { property: 'og:title', content: 'grad' },
           ]}
         >
           <body className="grad" />
