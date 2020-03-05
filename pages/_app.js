@@ -31,7 +31,8 @@ export default class MyApp extends App {
         >
           <body className="grad" />
           <style type="text/css">{`
-            body { height: 100vh}
+            body { height: 100vh; margin: 0; padding: 0;}
+            body:before { height: 100vh }
           `}</style>
         </Helmet>
         <Component {...pageProps} />

@@ -10,7 +10,8 @@ const direction = () =>
 // TODO: add hotkey to cycle array for gradient direction
 // grad = () => `linear-gradient(${direction()}, ${rgb()} 0%, ${rgb()} 100%)`;
 const grad = () => `
-  linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
+  linear-gradient(${direction()}, ${rgba()} 0%, ${rgba()} ${num(100)}%),
+  linear-gradient(${direction()}, ${rgba()} 0%, ${rgba()} ${num(100)}%), 
   linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
   linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
   linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
@@ -18,7 +19,28 @@ const grad = () => `
   `;
 
 const apply = bg => {
-  document.getElementsByClassName('grad')[0].style.backgroundImage = bg;
+  // document.getElementsByClassName('grad')[0].style.backgroundImage = bg;
+  document
+    .getElementsByClassName('grad')[0]
+    .setAttribute('style', `background: ${bg}`);
+
+  document.styleSheets[0].addRule(
+    'body:before',
+    `
+    content: ""; 
+    position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+    right: 0; 
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black);
+		mask-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+    mask-image: linear-gradient(to bottom, transparent, black);
+    `
+  );
+
+  document.getElementsByClassName('code')[0].value = bg;
 };
 
 const bg = grad();
