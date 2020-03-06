@@ -8,7 +8,7 @@ export default class MyApp extends App {
       <>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          // title="grad"
+          title="grad"
           meta={[
             {
               name: 'viewport',
