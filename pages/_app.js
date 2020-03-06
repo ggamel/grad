@@ -17,6 +17,7 @@ export default class MyApp extends App {
             { property: 'og:title', content: 'grad' },
           ]}
         >
+          <meta name="description" content="grad" />
           <body className="grad" />
           <style type="text/css">{`
             body { height: 100vh; margin: 0; padding: 0;}
