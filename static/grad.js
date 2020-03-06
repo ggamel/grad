@@ -8,10 +8,12 @@ const direction = () =>
   directions[Math.floor(Math.random() * directions.length)];
 // TODO: add default of index 0
 // TODO: add hotkey to cycle array for gradient direction
-// grad = () => `linear-gradient(${direction()}, ${rgb()} 0%, ${rgb()} 100%)`;
+
 const grad = () => `
   linear-gradient(${direction()}, ${rgba()} 0%, ${rgba()} ${num(100)}%),
-  linear-gradient(${direction()}, ${rgba()} 0%, ${rgba()} ${num(100)}%), 
+  linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
+  linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
+  linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
   linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
   linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
   linear-gradient(${num(360)}deg, ${rgba()} 0%, ${rgba()} ${num(100)}%),
