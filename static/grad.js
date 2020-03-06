@@ -41,8 +41,6 @@ const apply = bg => {
     mask-image: linear-gradient(to bottom, transparent, black);
     `
   );
-
-  document.getElementsByClassName('code')[0].value = bg;
 };
 
 const bg = grad();
